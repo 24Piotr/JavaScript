@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piotr Giedo 2P</title>
+    <style>
+        body {
+            font-family: Trebuchet, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            font-size: 2cm;
+            color: red;
+        }
+        h3 {
+            font-size: 1.5cm;
+            margin-top: 10px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .buttons-group {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script language="JavaScript">
+        function WinOpen(arg) {
+            window.open(`${arg}.html`, "okienko", "toolbar=no,directories=no,menubar=no,height=480,width=700,top=200,left=400");
+        }
+        function okno_zamknij() {
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<h2>Szkielet zaliczeniowy JavaScript Piotr Giedo 2P</h2>
+
+<div class="container">
+    <h3>Zadania</h3>
+    <div class="buttons-group">
+        <input type="button" value="zadanie1-giedo" name="zadanie1" onclick="WinOpen('z1_gied')">
+        <input type="button" value="zadanie2-giedo" name="zadanie2" onclick="WinOpen('z2_gied')">
+        <input type="button" value="zadanie3-giedo" name="zadanie3" onclick="WinOpen('z3_gied')">
+        <input type="button" value="zadanie4-giedo" name="zadanie4" onclick="WinOpen('z4_gied')">
+        <input type="button" value="zadanie5-giedo" name="zadanie5" onclick="WinOpen('z5_gied')">
+        <input type="button" value="zadanie6-giedo" name="zadanie6" onclick="WinOpen('z6_gied')">
+    </div>
+
+    <!-- <h3>Kody do zadań</h3>
+    <div class="buttons-group">
+    </div> -->
+
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()">
+</div>
+</body>
+</html>
