@@ -1,2 +1,2 @@
 # JavaScript
- Zadania od 1 do 6
+ Zadania od 1 do 16
