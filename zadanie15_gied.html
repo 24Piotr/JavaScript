@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 15</title>
+    <style>
+        *{color: green;};
+    </style>
+</head>
+<body>
+    <script language="JavaScript"> 
+        var mPodaj_gie=prompt("Podaj liczbę m = ","");
+        var m_gie=parseInt(mPodaj_gie);
+        var a_gie = m_gie*2;
+
+        document.write("1/"+m_gie+" = 1/"+a_gie+" + 1/"+a_gie+" <br>"); 
+        
+        function okno_zamknij() {
+            window.close();
+        }
+    </script> 
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()">
+</body>
+</html>

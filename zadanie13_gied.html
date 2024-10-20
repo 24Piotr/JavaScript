@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 13</title>
+    <style>
+        *{color: green;};
+    </style>
+</head>
+<body>
+    <script language="JavaScript"> 
+        var m_gie=prompt("Podaj liczbę m = ","");
+        var a_gie=parseInt(m_gie);
+        var b_gie = a_gie+1;
+        var c_gie = a_gie*(a_gie+1);
+
+        document.write("1/"+a_gie+" = 1/"+b_gie+" + 1/"+c_gie+" <br>"); 
+        function okno_zamknij() {
+            window.close();
+        }
+    </script> 
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()">
+</body>
+</html>

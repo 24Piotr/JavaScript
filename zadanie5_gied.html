@@ -1,0 +1,34 @@
+<script>
+{
+    document.write("Wykonał:  Piotr Giedo numer w dzienniku 9 ".fontcolor("red").fontsize("6").bold()+"<br>");
+}
+{
+    document.write(" czyli mam układ [9 mod 4 = 1] czyli układ 1 ".fontcolor("red").fontsize("6").bold()+"<br>");
+}
+
+function WinOpen_giedo1(){
+    window.open("grafika1_giedo.html","okienko_z5_1","toolbar=no,directories=no,menubar=no,height=380,width=160,top=700,left=400");
+}
+ function WinOpen_giedo2() 
+ {
+window.open("grafika2_giedo.html","okienko_z5_2","toolbar=no,directories=no,menubar=no,height=380,width=160,top=700,left=600");
+ }
+ function WinOpen_giedo3() 
+ {
+window.open("grafika3_giedo.html","okienko_z5_3","toolbar=no,directories=no,menubar=no,height=380,width=160,top=700,left=800");
+ }
+ function WinOpen_giedo4() 
+ {
+window.open("grafika4_giedo.html","okienko_z5_4","toolbar=no,directories=no,menubar=no,height=380,width=160,top=700,left=1000");
+ }
+function okno_zamknij_giedo() {
+ window.close()
+ }
+</script>
+<form>
+    <input type="button" name="zadanie3" value="grafika1" onclick="WinOpen_giedo1(' ')">
+    <input type="button" name="zadanie4" value="grafika2" onclick="WinOpen_giedo2(' ')">
+    <input type="button" name="zadanie5" value="grafika3" onclick="WinOpen_giedo3(' ')">
+    <input type="button" name="zadanie5" value="grafika4" onclick="WinOpen_giedo4(' ')"><br><br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij_giedo()">
+</form>

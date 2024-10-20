@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod - zadanie 12</title>
+</head>
+<body>
+    <textarea style="width: 400px; height:850px;">
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+        
+        <h2>Obliczanie różnicy czasu między dwoma dniami stycznia</h2>
+        
+        <p>Podaj pierwszy dzień </p>
+        <input id="D1_gied" type="number" min="1" max="31">
+        
+        <p>Podaj pierwszą godzinę </p>
+        <input id="G1_gied" type="number" min="1" max="24">
+        
+        <p>Podaj drugi dzień </p>
+        <input id="D2_gied" type="number" min="1" max="31">
+        
+        <p>Podaj drugą godzinę </p>
+        <input id="G2_gied" type="number" min="1" max="24">
+        
+        <button onclick="oblicz()">Oblicz</button>
+        
+        <p id="wynik" style="color: green; font-size: 40px;"></p>
+        
+        <script>
+            function oblicz() {
+                var D1_gied = document.getElementById("D1_gied").value;
+                var D2_gied = document.getElementById("D2_gied").value;
+                var G1_gied = document.getElementById("G1_gied").value;
+                var G2_gied = document.getElementById("G2_gied").value;
+        
+                var data1 = new Date(2024, 0, D1_gied, G1_gied);
+                var data2 = new Date(2024, 0, D2_gied, G2_gied);
+        
+                var sekundy = Math.abs(data2 - data1) / 1000;
+        
+                document.getElementById("wynik").innerHTML = "Różnica czasu między dniami wynosi: " + sekundy + " sekund.";
+            }
+        </script>
+        </body>
+        </html>
+        
+    </textarea>
+</body>
+</html>

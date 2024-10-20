@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 14</title>
+    <style>
+        *{color: green;};
+    </style>
+</head>
+<body>
+    <script language="JavaScript"> 
+        var mPodaj_gie=prompt("Podaj liczbę m = ","");
+        var m_gie=parseInt(mPodaj_gie);
+        var a_gie = m_gie+1;
+        var b_gie = m_gie*(m_gie+1);
+        var d_gie = a_gie+1;
+        var e_gie = a_gie*d_gie;
+
+        document.write("1/"+m_gie+" = 1/"+a_gie+" + 1/"+b_gie+" <br>"); 
+        document.write("1/"+a_gie+" = 1/"+d_gie+" + 1/"+e_gie+" <br>"); 
+        document.write("1/"+m_gie+" = 1/"+e_gie+" + 1/"+b_gie+" <br>");
+        
+        function okno_zamknij() {
+            window.close();
+        }
+    </script> 
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()">
+</body>
+</html>
