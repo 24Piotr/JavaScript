@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p id="1"></p>
+    <script>
+        var i_g = parseFloat(prompt("Podaj liczbę"));
+        var wynik_gie = document.getElementById('1');
+
+        if (i_g < 2) {
+                wynik_gie.innerHTML = `Brak liczb`;
+        }
+        else for(let i = 2; i <= i_g; i++) {
+            if(i % 2 == 0){
+                wynik_gie.innerHTML += `${i}, `;
+            }
+        }
+    </script>
+</body>
+</html>

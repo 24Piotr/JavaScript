@@ -1,0 +1,23 @@
+<textarea name="" id="" cols="90" rows="16">
+    <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        const num = parseFloat(prompt("Podaj liczbe:"));
+        function silnia_gie(n) {
+            if (n === 0) return 1;
+            let result = 1;
+            for (let i = 1; i <= n; i++) result *= i;
+            return result;
+        }
+        
+        document.write(`<p> n = ${num} <br> ${num}! = ${silnia_gie(n)} </p>
+        `);
+    </script>
+</body>
+</html>
+</textarea>
