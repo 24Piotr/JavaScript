@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Teksty</title>
+</head>
+<body>
+<script>
+    function draw(){
+        let canvas = document.getElementById('canvas'); 
+        let type = canvas.getContext('2d'); 
+
+        type.font = "80px Arial";
+        type.strokeStyle = "brown";
+        type.strokeText("ZSE", 200, 80);
+        
+ 
+     
+        type.fillStyle = "blue";
+        type.beginPath();
+        type.moveTo(180, 100);
+        type.lineTo(320, 100);
+        type.lineTo(370, 280);
+        type.lineTo(220, 280);
+        type.closePath();
+        type.fill();
+ 
+        type.font = "40px serif";
+        type.fillStyle = "black";
+        type.fillText("Technik", 65, 200);
+        type.fillText("etyczne", 340, 200);
+
+        type.font = "40px serif";
+        type.fillStyle = "white";
+        type.fillText("um", 195, 200);
+        type.fillText("Energ", 250, 200);
+ 
+        type.font = "45px serif";
+        type.fillStyle = "green";
+        type.fillText("Gdańsk", 160, 350);
+ 
+        type.font = "40px Arial";
+        type.strokeStyle = "navy";
+        type.strokeText("Reja 25", 340, 380);
+    }
+</script>
+</head> 
+<body onload="draw()"> 
+    <canvas id="canvas" width="600" height="800"> 
+        Twoja przeglądarka nie wspiera Canvas! Zainstaluj Internet Explorer 9.x 
+    </canvas> 
+</body> 
+</html> 

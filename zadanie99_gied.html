@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 99 - Piotr giedo</title>
+</head>
+<body>
+    <script>
+        const date = new Date();
+        let today = date.getDay();
+        let todayIs = "";
+
+        switch(today){
+            case 0:
+                todayIs = "Niedziela";
+                break;
+            case 1:
+                todayIs = "Poniedziałek";
+                break;
+            case 2:
+                todayIs = "Wtorek";
+                break;
+            case 3:
+                todayIs = "Środa";
+                break;
+            case 4:
+                todayIs = "Czwartek";
+                break;
+            case 5:
+                todayIs = "Piątek";
+                break;
+            case 6:
+                todayIs = "Sobota";
+                break;
+            default:
+                document.write("Nieznany dzień tygodnia.");
+        }
+
+        document.write(`Dzisiaj jest ${todayIs}`);
+    </script>
+</body>
+</html>

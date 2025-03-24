@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 67 - Piotr Giedo</title>
+</head>
+<body>
+    <form id="input">
+        <input type="number" id="1" required>
+        *x +
+        <input type="number" id="2" required>
+        *x =
+        <input type="number" id="3" required>
+        <br> <br>
+        <input type="number" id="4" required>
+        *x +
+        <input type="number" id="5" required>
+        *x =
+        <input type="number" id="6" required>
+        <br><br>
+        <button type="button" onclick="calc()">Oblicz</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calc() {
+            const A = [
+                [
+                    parseFloat(document.getElementById('1').value),
+                    parseFloat(document.getElementById('2').value),
+                    parseFloat(document.getElementById('3').value)
+                ],
+                [
+                    parseFloat(document.getElementById('4').value),
+                    parseFloat(document.getElementById('5').value),
+                    parseFloat(document.getElementById('6').value)
+                ]
+            ];
+
+            const W = A[0][0] * A[1][1] - A[0][1] * A[1][0];
+            const Wx = A[0][2] * A[1][1] - A[1][2] * A[0][1];
+            const Wy = A[0][0] * A[1][2] - A[1][0] * A[0][2];
+            let resultText = '';
+
+            if (W !== 0) {
+                const X = Wx / W;
+                const Y = Wy / W;
+                resultText += `<p>Układ oznaczony: jedno rozwiązanie.</p>`;
+                resultText += `<p>X = ${X.toFixed(2)}, Y = ${Y.toFixed(2)}</p>`;
+            } else if (Wx !== 0 || Wy !== 0) {
+                resultText += `<p>Układ sprzeczny: brak rozwiązań.</p>`;
+            } else {
+                resultText += `<p>Układ ma nieskończenie wiele rozwiązań.</p>`;
+            }
+            
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

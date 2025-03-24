@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function draw() {
+        let drawing = document.getElementById('obrazek');
+        let rodzaj = drawing.getContext('2d');
+
+        rodzaj.beginPath();
+        rodzaj.moveTo(50,250);
+        rodzaj.quadraticCurveTo(100,200,180,280);
+        rodzaj.closePath();
+        rodzaj.fillStyle = "green";
+        rodzaj.fill();
+        }
+    </script>
+<body onload="draw()">
+    <canvas id="obrazek" width="1000" height="1000">
+        Twoja przeglądarka nie wspiera Canvas!
+       Zainstaluj Internet Explorer 9.x
+    </canvas>
+</body>
+</html>

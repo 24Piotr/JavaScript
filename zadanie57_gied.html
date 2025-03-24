@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="output"></div>
+    <button id="btn">Dalej</button>
+
+    <script>
+        const output = document.getElementById("output");
+        const button = document.getElementById("btn");
+        let n = 9;
+        let n15 = n+15;
+
+        function add() {
+            for (let i = n; i < n + 3; i++){
+                let p2 = Math.sqrt(i);
+                let p4 = Math.sqrt(Math.sqrt(i));
+                output.innerHTML += `I=${i}  pierw2(${i})=${p2.toFixed(2)}    pierw4(${i})=${p4.toFixed(2)} <br>`;
+            };
+            n += 3;
+            if (n >= n15) {
+                let p2 = Math.sqrt(n15);
+                let p4 = Math.sqrt(Math.sqrt(n15));
+                output.innerHTML += `I=${n15}  pierw2(${n15})=${p2.toFixed(2)}    pierw4(${n15})=${p4.toFixed(2)} <br>`;
+                button.remove();
+            };
+        };
+
+        button.addEventListener("click", add);
+        add();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 15 - Piotr Giedo</title>
+    <script type="text/javascript">
+        function rysuj() {
+        let x = 310;
+        let y = 421;
+        var rysowanie = document.getElementById('obrazek');
+        var rodzaj = rysowanie.getContext('2d');
+        rodzaj.fillStyle = 'yellow';
+        rodzaj.fillRect(0, 0, 100, 100);
+        rodzaj.strokeRect(0, 0, 100, 100);
+        rodzaj.fillStyle = 'red';
+        rodzaj.fillRect(30, 30, 30, 30);
+        rodzaj.beginPath();
+        rodzaj.moveTo(50+x,50+y);
+        rodzaj.lineTo(100+x,0+y);
+        rodzaj.lineTo(150+x,50+y);
+        rodzaj.lineTo(100+x,100+y);
+        rodzaj.lineTo(50+x,50+y);
+        rodzaj.fillStyle = 'green';
+        rodzaj.fill();
+        }
+        </script>
+</head>
+<body onload="rysuj();">
+    <canvas id="obrazek" width="1000" height="1000">
+    Twoja przeglądarka nie wspiera Canvas!
+   Zainstaluj Internet Explorer 9.x
+    </canvas>
+</body>
+</html>

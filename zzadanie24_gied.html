@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Animacja w Canvas</title> 
+   <script type="text/javascript"> 
+       let canvas 
+       let type; 
+       let x = 200; 
+       let y = 20; 
+       let dy = 10; 
+       let kolory = new Array("blue", "red", "yellow", "green"); 
+       let i = 0;
+       let interval = 100;
+       let bounce = 0; 
+ 
+       function draw() { 
+           canvas = document.getElementById('canvas'); 
+           type = canvas.getContext('2d'); 
+           bounceCount = document.getElementById('bounceCount');
+           setInterval(anim, interval); 
+       } 
+ 
+       function anim() {
+           type.clearRect(0, 0, canvas.width, canvas.height); 
+           y += dy; 
+           if (y > (canvas.height - 20)) { 
+               dy = -10; 
+               i = ++i % kolory.length;
+               bounce++;
+               bounceCount.innerHTML = bounce;
+               interval-=5;
+               setInterval(anim, interval);
+           } 
+           if (y < 20) { 
+               dy = 10; 
+               i = ++i % kolory.length; 
+               bounce++;
+               bounceCount.innerHTML = bounce;
+               interval-=5;
+               setInterval(anim, interval);
+           } 
+           type.beginPath(); 
+           type.fillStyle = kolory[i]; 
+           type.arc(x, y, 20, 0, Math.PI * 2, true); 
+           type.closePath(); 
+           type.fill(); 
+       } 
+   </script> 
+<style type="text/css"> 
+    canvas { border: 1px solid blue; } 
+</style> 
+</head> 
+<body onload="draw()"> 
+  <canvas id="canvas" width="400" height="400"> 
+    Twoja przeglądarka nie wspiera elementu canvas! Pobierz Internet Explorer 9 lub nowszą wersję!  
+  </canvas>
+  <p>Ilość odbić: <span id="bounceCount">0</span></p>
+</body> 
+</html>

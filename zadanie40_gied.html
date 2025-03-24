@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Zadanie JavaScript</title>
+    <meta charset="utf-8">
+    <style>
+        h1 { text-transform: uppercase; }
+        .green { color: green; }
+        .red {color: red}
+    </style>
+</head>
+<body>
+    <h1>Proste działania</h1>
+    <h3><b>Giedo klasa 2P</b></h3>
+    <label for="a">Podaj pierwszą liczbę:</label> <input type="number" id="a">
+    <br><br>
+    <label for="b">Podaj drugą liczbę:</label> <input type="number" id="b">
+    <br><br>
+    <input type="button" value="DODAWANIE" onclick="suma_gie()">
+    <input type="button" value="ODEJMOWANIE" onclick="roznica_gie()">
+    <input type="button" value="MNOŻENIE" onclick="iloczyn_gie()">
+    <input type="button" value="DZIELENIE" onclick="iloraz_gie()">
+    <input type="button" value="TEORIA-Giedo" onclick="teoria_gie()">
+    <div id="wynik" style="margin-top:20px;"></div>
+    <script>
+        function suma_gie(){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == ""){
+            document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            } 
+            else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var suma = a + b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + suma;
+            }
+            //alert(a);
+            //console.log(a);
+        }
+        function roznica_gie() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == ""){
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            }
+            else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var roznica = a - b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + roznica;
+            }
+        }
+        function iloczyn_gie() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == "") {
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            }
+            else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var iloczyn = a * b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + iloczyn;
+            }
+        }
+        function iloraz_gie() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == ""){
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            }
+            else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+            if (b == 0){
+                document.getElementById("wynik").innerHTML = "Nie wolno dzielić przez zero.";
+            }
+            else {
+                var iloraz = a / b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + iloraz;
+            }
+            }
+        }
+        function teoria_gie() {
+            document.getElementById('wynik').innerHTML = `
+                <div class="green">Pierwsza linia teorii</div>
+                <div class="red">&lt;label for="a"&gtPodaj pierwszą liczbę:&lt/label&gt &lt;input type="number" id="a"&gt;</div>
+                <div class="green">wytłumaczenia</div>
+                <div class="red">>wykonanie numerycznego pola formularza z opisem 'Podaj pierwszą liczbę:' a nazwa pola to 'a' </div>
+                <div class="green">Druga linia</div>
+                <div class="red">&lt;input type="button" value="DODAWANIE" onclick="suma()"&gt;</div>
+                <div class="green">wytłumaczenia</div>
+                <div class="red">Wykonanie przycisku o nazwie DODAWANIE i z takim samym napisem, kliknięcie myszką uruchamia funkcję suma().</div>
+                <div class="green">Trzecia linia</div>
+                <div class="red">var a = document.getElementById("a").value;</div>
+                <div class="green">wytłumaczenia</div>
+                <div class="red">wpisanie do zmiennej "a" wartości z elementu o Id "a" (zbieżność nazw)</div>
+                <div class="green">Czwarta linia</div>
+                <div class="red">if (a == "" || b == "")</div>
+                <div class="green">wytłumaczenia</div>
+                <div class="red">sprawdzenie czy pola "a" lub "b" są puste.</div>
+                <div class="green">Piąta linia</div>
+                <div class="red">document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + suma;</div>
+                <div class="green">wytłumaczenia</div>
+                <div class="red">pobranie wartości Id o nazwie "wynik" i wyprowadzenie w oknie przeglądarki tekstu "Wynik działania wynosi: " oraz wartości zmiennej suma;</div>
+            `
+        }
+    </script>
+</body>
+</html>

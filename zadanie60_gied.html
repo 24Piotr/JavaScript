@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 60 - Piotr Giedo</title>  
+</head>
+<body>
+    <script>
+        let suma_gie=0; 
+        const T_gie = new Array();
+        let n_gie = parseInt(prompt("Podaj licbę na której ma się kończyć pętla: "));
+
+        for (i = 0; i < n_gie; i++) { 
+            T_gie[i] = i; 
+            suma_gie=suma_gie+i; 
+            document.write("T["+i+"]="+T_gie[i]+"<br>"); 
+        } 
+
+        let srednia_gie=suma_gie/i; 
+        document.write("suma="+suma_gie+"<br>"); 
+        document.write("średnia="+srednia_gie.toFixed(2)+"<br>");
+    </script>
+</body>
+</html>

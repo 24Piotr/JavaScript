@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 94 - Piotr Giedo</title>
+</head>
+<body>
+    <p id="data"></p>
+    <p id="czas"></p>
+    <script type="text/javascript">
+        let data = document.getElementById('data');
+        let czas = document.getElementById('czas');
+        const dzisiaj = new Date();
+        const dniTygodnia = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+        const miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+        
+        const dzienTygodnia = dniTygodnia[dzisiaj.getDay()];
+        const dzienMiesiaca = dzisiaj.getDate();
+        const miesiac = miesiace[dzisiaj.getMonth()];
+        const rok = dzisiaj.getFullYear();
+        const godzina = dzisiaj.getHours().toString()
+        const minuta = dzisiaj.getMinutes().toString()
+        const sekunda = dzisiaj.getSeconds().toString()
+        
+        data.innerHTML = `${dzienTygodnia}, ${dzienMiesiaca} ${miesiac} ${rok}`;
+        czas.innerHTML =  `${godzina}:${minuta}:${sekunda}`;
+    </script> 
+</body>
+</html>

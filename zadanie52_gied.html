@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        const imie = "Piotr";
+        const nazwisko = "Giedo";
+        const a = imie.length % 4 + 5;
+        const b = nazwisko.length % 6 + 20;
+
+        for (var i = 0; i < b; i++) {
+            document.write("*");
+        }
+        document.write("<br>");
+        for (var i = 0; i < a - 2; i++) {
+            document.write("*");
+            for (var j = 0; j < b - 2; j++) {
+                document.write("&nbsp;&nbsp;");
+            }
+            document.write("*<br />");
+        }
+        for (var i = 0; i < b; i++) {
+            document.write("*");
+        }
+    </script>
+</body>
+</html>

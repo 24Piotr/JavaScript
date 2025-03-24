@@ -8,14 +8,19 @@
         body {
             font-family: Trebuchet, sans-serif;
             margin: 20px;
+            background-color: rgb(29, 29, 29);
         }
         h2 {
-            font-size: 2cm;
-            color: red;
+            font-weight: 600;
+            font-size: 50px;
+            color: rgb(247, 247, 247);
         }
         h3 {
             font-size: 1.5cm;
-            margin-top: 10px;
+            margin: 0;
+            margin-bottom: 15px;
+            font-weight: 400;
+            color: rgb(199, 199, 199)
         }
         .container {
             display: flex;
@@ -24,6 +29,14 @@
         }
         .buttons-group {
             margin-bottom: 20px;
+        }
+        input {
+            margin: 2px;
+            padding: 4px;
+            color:rgb(235, 235, 235);
+            background-color: rgb(54, 54, 54);
+            border: 2px solid rgb(63, 63, 63);
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -38,13 +51,14 @@
     <div class="buttons-group" id="tasksCodes">
     </div>
 
+    <iframe src="zadanie82_gied.html" frameborder="0" width="500px" height="600px"></iframe>
     <input type="button" value="zamknij okno" onclick="window.close();">
 </div>
 </body>
 <script language="JavaScript">
-    const maxTask = 27;
-    const skipTasks = [];
-    const tasksCodes = [11, 12, 13, 14, 15, 16 ,17, 18, 19, 20, 22, 23, 24, 25, 26, 27]
+    const maxTask = 100;
+    const skipTasks = [33, 34, 38, 41, 42, 44, 45, 46, 47, 48, 50, 53, 54, 55];
+    const tasksCodes = [11, 12, 13, 14, 15, 16 ,17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 30, 31, 32, 35, 36, 37, 39, 40, 43, 49]
 
     function WinOpen(arg) {
         window.open(`${arg}.html`, "okienko", "toolbar=no,directories=no,menubar=no,height=480,width=700,top=200,left=400");
@@ -54,7 +68,7 @@
     for(let i = 1; i<=maxTask; i++){
         if (skipTasks.includes(i)) continue;
         document.getElementById("tasks").innerHTML +=
-        `<input type="button" value="zadanie${i}-giedo" name="zadanie2" onclick="WinOpen('zadanie${i}_gied')"> `;
+        `<input type="button" value="zadanie${i}-giedo" name="zadanie${i}" onclick="WinOpen('zadanie${i}_gied')"> `;
     }
 
     // Tasks codes
