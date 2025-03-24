@@ -1,2 +1,3 @@
 # JavaScript
- Zadania od 1 do 56 (pomijając zadania nie oceniane)
+ Zadania od początku do 33
+ (pomijając zadania nie oceniane oraz puste)
