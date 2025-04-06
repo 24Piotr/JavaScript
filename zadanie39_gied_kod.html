@@ -1,0 +1,31 @@
+<textarea name="" id="" cols="100" rows="24">
+    <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <input type="button" name="Giedo" value="Oblicz" onclick="check_giedo()" />
+    <h1 style="color:green;">MENU</h1>
+    <h3 style="color:red;">1-CZERWONY</h3>
+    <h3 style="color:blue;">2-NIEBIESKI</h3>
+    <script>
+        function check_giedo() {
+            var opcja_dana_gie = prompt("Podaj kolor");
+            if(opcja_dana_gie == 1 || opcja_dana_gie.toLowerCase() == "czerwony") {
+                document.write('<h1 style="color:red; font-size: 7;">wczytałeś kolor czerwony</h1><br />');
+            }
+            else if(opcja_dana_gie == 2 || opcja_dana_gie.toLowerCase() == "niebieski") {
+                document.write('<h6 style="color:blue; font-size: 1;">wczytałeś kolor niebieski</h6><br />');
+            }
+            else {
+                document.write(`Nie wczytałes żadnego z kolorów`);
+            }
+        }
+   </script>
+   
+</body>
+</html> 
+</textarea>

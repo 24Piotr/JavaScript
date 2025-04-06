@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>jQuery prompty</title>
+    <script>
+
+$(document).ready(function(){
+    let a, b;
+    $('p').click(function(){
+        a = parseFloat(prompt("Podaj pierwszą liczbe "));
+    });
+    $('span').click(function(){
+        b = parseFloat(prompt("Podaj drugą liczbe "));
+    });
+
+    if(a != null && b != null){
+        document.getElementById('result').innerHTML = `
+        ${a}%${b}=${a%b} `;
+    }
+});
+    
+    </script>
+</head>
+<body>
+    <p id="num1">Podaj pierwszą liczbę (wczytanie po kliknięciu myszką)</p>
+    <span id="num2">spanodaj pierwszą liczbę (wczytanie po kliknięciu myszką)</span>
+    <br>
+    <button type="submit" onclick="calculate()"></button>
+    <p id="result"></p>
+</body>
+</html>

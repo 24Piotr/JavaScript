@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 16 - Piotr Giedo</title>
+</head>
+<script>
+    function draw() {
+        var drawing = document.getElementById('obrazek');
+        var type = drawing.getContext('2d');
+        type.beginPath();
+        type.arc(200,100, 30, Math.PI, 90, false);
+        type.closePath();
+        type.lineWidth = 6;
+        type.strokeStyle = "blue";
+        type.stroke();
+
+        type.beginPath();
+        type.arc(235,130, 30, Math.PI, 90, false);
+        type.closePath();
+        type.lineWidth = 6;
+        type.strokeStyle = "yellow";
+        type.stroke();
+
+        type.beginPath();
+        type.arc(275,100, 30, Math.PI, 90, false);
+        type.closePath();
+        type.lineWidth = 6;
+        type.strokeStyle = "black";
+        type.stroke();
+
+        type.beginPath();
+        type.arc(310,130, 30, Math.PI, 90, false);
+        type.closePath();
+        type.lineWidth = 6;
+        type.strokeStyle = "green";
+        type.stroke();
+
+        type.beginPath();
+        type.arc(345,100, 30, Math.PI, 90, false);
+        type.closePath();
+        type.lineWidth = 6;
+        type.strokeStyle = "red";
+        type.stroke();
+    }
+</script>
+<body onload="draw();">
+    <canvas id="obrazek" width="1000" height="1000">
+        Twoja przeglądarka nie wspiera Canvas!
+       Zainstaluj Internet Explorer 9.x
+        </canvas>
+</body>
+</html>

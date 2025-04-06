@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 61 - Piotr Giedo</title>  
+</head>
+<body>
+    <script>
+        let ilo_gie = 1; 
+        const TT_gie = new Array();
+        let n_gie = parseInt(prompt("Podaj licbę na której ma się kończyć pętla: "));
+
+        for (i = 0; i < n_gie+1; i++) { 
+            TT_gie[i] = 3*(i+1);
+            ilo_gie *= 3*(i+1);
+            document.write("T["+i+"]="+TT_gie[i]+"<br>"); 
+        } 
+
+        document.write("Iloczyn="+ilo_gie.toFixed(2)+"<br>");
+    </script>
+</body>
+</html>

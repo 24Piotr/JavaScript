@@ -1,0 +1,61 @@
+#nazwisko {
+    color: green;
+    font-size: 3cm;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.code-display {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.script-result {
+    background-color: #e9f7ef;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+#imageGallery {
+    text-align: center;
+}
+
+.gallery-controls {
+    margin-top: 10px;
+}
+
+#script3Result input, #script3Result select {
+    padding: 8px;
+    margin: 5px;
+}
+
+#testForm input {
+    padding: 8px;
+    margin: 5px;
+    width: 200px;
+}

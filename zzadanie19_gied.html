@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zadanie 19</title>
+        <style>
+            canvas {
+                background-color: white;
+            }
+        </style>
+        <script type="text/javascript">
+            function draw() {
+                let canvas = document.getElementById("canvas");
+                let type = canvas.getContext("2d");
+                type.beginPath();
+                type.moveTo(250, 500);
+                type.lineTo(300, 100);
+                type.lineTo(550, 100);
+                type.lineTo(600, 500);
+                type.lineTo(250, 500);
+                type.fill();
+                type.lineWidth = 2;
+                type.lineJoin = "bevel";
+                type.stroke();
+                type.beginPath();
+                type.strokeStyle = "white";
+                type.moveTo(325, 400);
+                type.lineTo(425, 450);
+                type.lineTo(525, 400);
+                type.lineWidth = 20;
+                type.lineJoin = "miter";
+                type.stroke();
+                type.beginPath();
+                type.strokeStyle = "white";
+                type.moveTo(325, 350);
+                type.lineTo(425, 400);
+                type.lineTo(525, 350);
+                type.lineWidth = 20;
+                type.lineJoin = "miter";
+                type.stroke();
+                type.beginPath();
+                type.strokeStyle = "white";
+                type.moveTo(325, 300);
+                type.lineTo(425, 350);
+                type.lineTo(525, 300);
+                type.lineWidth = 20;
+                type.lineJoin = "miter";
+                type.stroke();
+            }
+        </script>
+    </head>
+    <body onload="draw()">
+        <canvas id="canvas" height="1000" width="1000">
+            Twoja przeglądarka nie wspiera Canvas!
+        </canvas>
+</body>
+</html>

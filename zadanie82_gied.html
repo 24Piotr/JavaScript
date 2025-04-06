@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 82 - Piotr Giedo</title>
+</head>
+<body bgcolor="white">
+    <h1>Model DOM</h1>
+    DOM (Document Object Model) to sposób opisu złożonych dokumentów XML i  HTML w postaci 
+    hierarchii modeli (niektóre obiekty są nadrzędne nad innymi, cała strona tworzy drzewo obiektów) 
+    modelu obiektowego. <br>
+    <u>Mechanizm działania DOM</u> -> Kod HTML zamieniany jest przez przeglądarkę na stronę WWW. 
+    Przeglądarka przechowuje informację o stronie WWW w postaci modelu obiektowego strony. DOM 
+    ma hierarchię obiektów, udostępniane są metody oraz właściwości obiektów. 
+    <br> Przykład kodu + schemat/drzewo DOM <br>
+    <textarea cols="90" rows="9">
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+    <title>Obiekty</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+</head> 
+<body> 
+    <p>Strona DOM<b>pokaz</b></p> 
+</body> 
+</html>
+    </textarea>
+    <h1>Wycinek hierarchii DOM</h1>
+    <b>Window</b>
+    <ol>
+        <li><b>document</b> <br>
+            <ul>
+                <li>links[]</li>
+                <li>anchors[]</li>
+                <li>images[]</li>
+                <li>forms[] <br>
+                <ul>
+                    <li>elementy formulara</li>
+                </ul>
+                </li>
+                <li>obiekty DOM Level 1</li>
+            </ul>
+        </li>
+        <li>history</li>
+        <li>location</li>
+    </ol>
+    <br>
+    W celu odwolania się do obiektu należy podać nazwy obiektów w hierarchi oddzielonych kropkami. <br>
+    np. window.document.link1
+</body>
+</html>

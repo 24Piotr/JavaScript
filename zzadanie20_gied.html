@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zadanie 20</title>
+        <script type="text/javascript">
+            function draw() {
+                let canvas = document.getElementById("canvas");
+                let type = canvas.getContext("2d");
+                type.beginPath(); 
+                type.moveTo(200, 300); 
+                type.lineTo(500, 300); 
+                type.lineTo(500, 600); 
+                type.lineTo(200, 600); 
+
+                type.lineTo(200, 300); 
+                type.lineTo(500, 600); 
+
+                type.lineTo(500, 300); 
+                type.lineTo(200, 600); 
+
+                type.closePath(); 
+                type.lineWidth = 20; 
+                type.lineJoin = "round"; 
+                type.stroke(); 
+            }
+        </script>
+    </head>
+    <body onload="draw()">
+        <canvas id="canvas" height="1000" width="1000">
+            Twoja przeglądarka nie wspiera Canvas!
+        </canvas>
+</body>
+</html>

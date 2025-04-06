@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function drawShape(x, y, rotate) {
+            var canvas = document.getElementById('obrazek'); 
+            var type = canvas.getContext('2d'); 
+            type.save();
+            type.translate(x, y);
+            type.rotate(rotate * Math.PI / 180);
+            type.beginPath();
+            type.moveTo(0, 0);
+            type.quadraticCurveTo(-20, -15, -40, 0);
+            type.quadraticCurveTo(-20, 35, 0, 45);
+            type.quadraticCurveTo(20, 35, 40, 0);
+            type.quadraticCurveTo(20, -15, 0, 0);
+            type.closePath();
+            type.fillStyle = "green";
+            type.fill();
+            type.restore();
+        }
+
+        function draw() {
+            var canvas = document.getElementById('obrazek');
+            var type = canvas.getContext('2d');
+            type.clearRect(0, 0, canvas.width, canvas.height);
+
+            drawShape(250, 200, 0);   
+            drawShape(295, 250, 90);  
+            drawShape(205, 250, -90); 
+            drawShape(250, 300, 180); 
+        }
+    </script>
+<body onload="draw()">
+    <canvas id="obrazek" width="1000" height="1000">
+        Twoja przeglądarka nie wspiera Canvas!
+       Zainstaluj Internet Explorer 9.x
+    </canvas>
+</body>
+</html>

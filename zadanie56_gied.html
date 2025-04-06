@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="output"></div>
+    <button id="btn">Dalej</button>
+
+    <script>
+        const output = document.getElementById("output");
+        const button = document.getElementById("btn");
+        let counter_gie = 0;
+        
+        function add() {
+            for (let i = counter_gie; i < counter_gie + 5; i++){
+                let result = Math.pow(i, 2) + i + 41
+                output.innerHTML += `
+                w(${i}) = ${result} <br>
+                `;
+            };
+            counter_gie += 5;
+            if (counter_gie >= 40) {
+                button.remove();
+            };
+        };
+
+        button.addEventListener("click", add);
+        add();
+    </script>
+</body>
+</html>

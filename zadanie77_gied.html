@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 77 - Piotr Giedo</title>
+    <script>
+        function CKE_Open() {
+            window.location = "https://cke.gov.pl";
+        }
+        function GDA_Open() {
+            window.location = "https://www.gdansk.pl";
+            
+        }
+        function UCZEN_Open() {
+            window.location = "https://github.com";
+        }
+        function RefreshPage() {
+            window.location = "";
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" name="button1" value="Strona CKE" onclick="setTimeout(CKE_Open,4000)">
+        <input type="button" name="button2" value="Strona Gdańska" onclick="setTimeout(GDA_Open,6000);">
+        <input type="button" name="button3" value="Strona wybrana przez ucznia" onclick="setTimeout(UCZEN_Open,10000)">
+        <input type="button" name="button4" value="Odświerz" onclick="setTimeout(RefreshPage,8000)">
+    </form>
+</body>
+</html>

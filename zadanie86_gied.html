@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 86 - Piotr Giedo</title>
+</head>
+<body>
+    <script>
+        tekst = "Obiekty języka JavaScript" 
+        let x = tekst.toLowerCase() 
+        /*Zostanie zwrócony łańcuch obiekty języka javascript */
+        let y = tekst.toUpperCase() 
+        /*Zostanie zwrócony łańcuch OBIEKTY JĘZYKA JAVASCRIPT*/
+
+        String.prototype.duzaLitera = function() { 
+            return this.charAt(0).toUpperCase() + this.substr(1);
+        }
+
+        let tx1 = 'komputer'; 
+        document.write(tx1.duzaLitera());
+
+        let dat_cz = new Date();
+        let data = new Date(2018,2,27); 
+    </script>
+</body>
+</html>

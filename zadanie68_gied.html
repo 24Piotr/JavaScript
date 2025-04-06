@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 68 - Piotr Giedo</title>
+</head>
+<body>
+    Wiersze = <input type="number" id="rows" value="3" readonly>
+    Kolumny = <input type="number" id="cols" value="3" readonly>
+    <br/>
+    <button onclick="calc()"style="color:red; margin-top: 10px">Twórz tabelę!</button>
+    <br/>
+    <span id="mother"></span>
+    <script>
+        function calc(){
+            const cols = document.getElementById("cols").value;
+            const rows = document.getElementById("rows").value;
+            let mother = document.getElementById("mother");
+            let n = [ [,,], [,,], [,,] ];
+            mother.innerHTML = "";
+
+            for(let i=0;i<rows;i++){
+                for(let j=0; j<cols; j++){
+                    n[i][j] = parseInt(prompt("Podaj wartości dla "+i+","+j));
+                }
+            }
+            for(let i=0;i<rows;i++){
+                for(let j=0;j<cols;j++){
+                    mother.innerHTML += `${n[i][j]} `;
+                }
+                mother.innerHTML += `<br/>`;
+            }
+
+            mother.innerHTML += `<br/> (${n[0][0]}*${n[1][1]}*${n[2][2]} + ${n[0][1]}*${n[1][2]}*${n[2][0]} + ${n[0][2]}*${n[1][0]}*${n[2][1]}) - (${n[2][0]}*${n[1][1]}*${n[0][2]} + ${n[2][1]}*${n[1][2]}*${n[0][0]} + ${n[2][2]}*${n[1][0]}*${n[0][1]}) = 
+            ${(n[0][0] * n[1][1] * n[2][2] + n[0][1] * n[1][2] * n[2][0] + n[0][2] * n[1][0] * n[2][1])} - ${ (n[2][0] * n[1][1] * n[0][2] + n[2][1] * n[1][2] * n[0][0] + n[2][2] * n[1][0] * n[0][1])} = 
+            ${(n[0][0] * n[1][1] * n[2][2] + n[0][1] * n[1][2] * n[2][0] + n[0][2] * n[1][0] * n[2][1]) - (n[2][0] * n[1][1] * n[0][2] + n[2][1] * n[1][2] * n[0][0] + n[2][2] * n[1][0] * n[0][1])}`;
+
+        }
+    </script>
+</body>
+</html>

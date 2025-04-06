@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwadraty CMYK</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .container {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            border: 1px solid #000;
+            margin: 20px auto;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #cyan {
+            top: 20px;
+            left: 20px;
+        }
+        
+        #magenta {
+            top: 20px;
+            right: 20px;
+        }
+        
+        #yellow {
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        #black {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .cyan-active {
+            background-color: #00FFFF;
+        }
+        
+        .magenta-active {
+            background-color: #FF00FF;
+        }
+        
+        .yellow-active {
+            background-color: #FFFF00;
+        }
+        
+        .black-active {
+            background-color: #000000;
+            color: white;
+        }
+
+        .inactive {
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="cyan" class="box cyan-active">cyan</div>
+        <div id="magenta" class="box inactive">magenta</div>
+        <div id="yellow" class="box inactive">żółty</div>
+        <div id="black" class="box black-active">czarny</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.box').click(function() {
+                var id = $(this).attr('id');
+                var colorClass = '';
+                
+                if (id.includes('cyan')) {
+                    colorClass = 'cyan-active';
+                } else if (id.includes('magenta')) {
+                    colorClass = 'magenta-active';
+                } else if (id.includes('yellow')) {
+                    colorClass = 'yellow-active';
+                } else if (id.includes('black')) {
+                    colorClass = 'black-active';
+                }
+                
+                if ($(this).hasClass(colorClass)) {
+                    $(this).removeClass(colorClass).addClass('inactive');
+                } else {
+                    $(this).removeClass('inactive').addClass(colorClass);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

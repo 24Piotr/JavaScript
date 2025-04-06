@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z Skryptami JS</title>
+    <link rel="stylesheet" href="giedo.css">
+</head>
+<body>
+    <h1 id="nazwisko">Giedo</h1>
+    
+    <div class="buttons">
+        <button onclick="showScript('script1')">Data</button>
+        <button onclick="showScript('script2')">Zegar</button>
+        <button onclick="showScript('script3')">Kalkulator</button>
+        <button onclick="showScript('script4')">Walidacja Formularza</button>
+        <button onclick="showScript('script5')">Galeria Obrazów</button>
+    </div>
+    
+    <div id="codeDisplay" class="code-display">
+        <pre id="scriptCode"></pre>
+    </div>
+
+    <div id="script1Result" class="script-result"></div>
+    <script id="script1" type="text/javascript">
+    miesiac = new Array(12)
+    miesiac[0] = "stycznia "
+    miesiac[1] = "lutego "
+    miesiac[2] = "marca "
+    miesiac[3] = "kwietnia "
+    miesiac[4] = "maja "
+    miesiac[5] = "czerwca "
+    miesiac[6] = "lipca "
+    miesiac[7] = "sierpnia "
+    miesiac[8] = "września "
+    miesiac[9] = "października "
+    miesiac[10] = "listopada "
+    miesiac[11] = "grudnia "
+    dzien = new Array(7)
+    dzien[0] = "niedziela "
+    dzien[1] = "poniedziałek "
+    dzien[2] = "wtorek "
+    dzien[3] = "środa "
+    dzien[4] = "czwartek "
+    dzien[5] = "piątek "
+    dzien[6] = "sobota "
+    function podaj_date() {
+        var Dzisiaj = new Date()
+        var Tygodnia = Dzisiaj.getDay()
+        var Miesiac = Dzisiaj.getMonth()
+        var Dnia = Dzisiaj.getDate()
+        var Rok = Dzisiaj.getFullYear()
+        if (Rok <= 99) Rok += 1900
+        return dzien[Tygodnia] + ", " + Dnia + " " + 
+               miesiac[Miesiac] + ", " + Rok +"r."
+    }
+    document.getElementById("script1Result").innerHTML = "Dziś jest " + podaj_date();
+    </script>
+
+    <div id="script2Result" class="script-result"></div>
+    <script id="script2" type="text/javascript">
+
+    function aktualizujZegar() {
+        const teraz = new Date();
+        const godzina = teraz.getHours().toString().padStart(2, '0');
+        const minuta = teraz.getMinutes().toString().padStart(2, '0');
+        const sekunda = teraz.getSeconds().toString().padStart(2, '0');
+        
+        const czasString = `${godzina}:${minuta}:${sekunda}`;
+        document.getElementById("script2Result").innerHTML = "Aktualny czas: " + czasString;
+    }
+    
+    setInterval(aktualizujZegar, 1000);
+    aktualizujZegar();
+    </script>
+
+    <div id="script3Result" class="script-result">
+        <input type="number" id="num1" placeholder="Pierwsza liczba"> 
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+        <input type="number" id="num2" placeholder="Druga liczba">
+        <button onclick="oblicz()">Oblicz</button>
+        <div id="wynik"></div>
+    </div>
+    <script id="script3" type="text/javascript">
+    function oblicz() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const operator = document.getElementById("operator").value;
+        let wynik;
+        
+        switch(operator) {
+            case '+':
+                wynik = num1 + num2;
+                break;
+            case '-':
+                wynik = num1 - num2;
+                break;
+            case '*':
+                wynik = num1 * num2;
+                break;
+            case '/':
+                wynik = num2 !== 0 ? num1 / num2 : "Nie można dzielić przez zero";
+                break;
+        }
+        
+        document.getElementById("wynik").textContent = `Wynik: ${wynik}`;
+    }
+    </script>
+    
+    <div id="script4Result" class="script-result">
+        <form id="testForm" onsubmit="return validateForm()">
+            <input type="text" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Hasło">
+            <button type="submit">Wyślij</button>
+        </form>
+        <div id="formMessage"></div>
+    </div>
+    <script id="script4" type="text/javascript">
+    function validateForm() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const messageElement = document.getElementById("formMessage");
+        
+        if (!email.includes('@')) {
+            messageElement.textContent = "Email musi zawierać znak @";
+            messageElement.style.color = "red";
+            return false;
+        }
+        
+        if (password.length < 6) {
+            messageElement.textContent = "Hasło musi mieć co najmniej 6 znaków";
+            messageElement.style.color = "red";
+            return false;
+        }
+        
+        messageElement.textContent = "Formularz poprawny!";
+        messageElement.style.color = "green";
+        return false;
+    }
+    </script>
+
+    <div id="script5Result" class="script-result">
+        <div id="imageGallery">
+            <img id="currentImage" src="/api/placeholder/10" alt="Placeholder image">
+            <div class="gallery-controls">
+                <button onclick="prevImage()">Poprzedni</button>
+                <button onclick="nextImage()">Następny</button>
+            </div>
+        </div>
+    </div>
+    <script id="script5" type="text/javascript">
+
+    const images = [
+        "/api/placeholder/10",
+        "/api/placeholder/10",
+        "/api/placeholder/10"
+    ];
+    let currentIndex = 0;
+    
+    function updateImage() {
+        document.getElementById("currentImage").src = images[currentIndex];
+    }
+    
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+    
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    }
+    </script>
+
+    <script>
+    function showScript(scriptId) {
+        const scriptElement = document.getElementById(scriptId);
+        const scriptCode = scriptElement.innerHTML;
+        document.getElementById("scriptCode").textContent = scriptCode;
+    }
+    </script>
+</body>
+</html>

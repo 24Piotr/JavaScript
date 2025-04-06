@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoper</title>
+    <script>
+        var poczatek_gied, koniec_gied;
+
+        function gied_start() {
+            start_gied = new Date(); 
+            poczatek_gied = start_gied.getTime();
+        }
+
+        function gied_stop() {
+            stop_gied = new Date();
+            koniec_gied = stop_gied.getTime();
+            
+            roznica_gied = koniec_gied - poczatek_gied; 
+            document.getElementById('pokaz1').innerHTML = (roznica_gied / 1000) + " s"; 
+        }
+    </script>
+</head>
+<body>
+    <h2>Stoper</h2>
+    <form name="formularz" action="...">
+        <input type="button" name="Button1" value="START stoper" onclick="gied_start()">
+        <input type="button" name="Button2" value="STOP stoper" onclick="gied_stop()">
+    </form>
+
+    <script>
+        dzis_gied = new Date();
+        document.write("<br>Aktualny czas : " + dzis_gied.getHours() + ":" + dzis_gied.getMinutes());
+    </script>
+
+    <table border="1">
+        <tr id="pokaz1"></tr>
+    </table>
+</body>
+</html>

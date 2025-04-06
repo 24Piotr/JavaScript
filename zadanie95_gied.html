@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 95 - Piotr giedo</title>
+    <style>
+        .kalendarz {
+            border: 2px solid rgb(65, 65, 65);
+            width: 200px;
+            height: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: 50px auto;
+            background-color: #e7e7e7;
+            box-shadow: 0px 0px 10px #717171;
+            border-radius: 10%;
+        }
+        .data {
+            font-size: 40px;
+            color: #212121;
+            font-weight: bold;
+        }
+        .czas {
+            font-size: 28px;
+            margin-top: 40px;
+        }
+    </style>
+    <script>
+        function refreshData() {
+            const data = new Date();
+            const dataOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            const timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const PLdata = data.toLocaleDateString('pl-PL', dataOptions);
+            const PLtime = data.toLocaleTimeString('pl-PL', timeOptions);
+
+            document.getElementById('data').innerHTML = PLdata;
+            document.getElementById('czas').innerHTML = PLtime;
+        }
+
+        setInterval(refreshData, 1000);
+        window.onload = refreshData;
+    </script>
+</head>
+<body>
+    <div class="kalendarz">
+        <div class="data" id="data"></div>
+        <div class="czas" id="czas"></div>
+    </div>
+</body>
+</html>
